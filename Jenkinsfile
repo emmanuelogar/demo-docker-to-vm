@@ -8,7 +8,7 @@ stage('Deploy to Azure VM') {
             }
 
             // Copy files to Azure VM
-            withCredentials([sshUserPrivateKey(credentialsId: 'your-ssh-credentials-id')]) {
+            withCredentials([sshUserPrivateKey(credentialsId: 'ssh-credentials')]) {
                 sh 'scp -r . $SSH_USERNAME@your-vm-ip-address:/demo'
             }
 
